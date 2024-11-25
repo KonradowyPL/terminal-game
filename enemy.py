@@ -17,9 +17,6 @@ class Enemy(RenderableComponent):
         newX = self.vx + self.x
         newY = self.y
 
-        img = self.image
-        self.image = self.empty
-        self.render()
 
         # died
         if self.health <= 0:
@@ -39,7 +36,6 @@ class Enemy(RenderableComponent):
         if newX >= self.renderer.len*4 or newX < 0 or newY >= self.renderer.height*4 or newY < 0:
             return self.renderer.removeFeature(self)
 
-        self.image = img
         self.x = newX
         self.y = newY
 
@@ -71,7 +67,7 @@ class Spider(Enemy):
         health = 3
         value = 2
         strenght = 2
-        vx = -2
+        vx = -3
         super().__init__(image, x, y, vx, player, health, value, strenght,  empty, **kwargs)
 
 
@@ -84,7 +80,7 @@ class Creeper(Enemy):
                  ]
         empty = ['   '] * 5
         health = 4
-        value = 7
+        value = 4
         strenght = 10
         vx = -2
         super().__init__(image, x, y, vx, player, health, value, strenght,  empty, **kwargs)

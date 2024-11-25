@@ -43,6 +43,8 @@ def shopSelector(player):
         sys.stdout.write("\x1B[J\x1b[H")
         sys.stdout.write("Witaj w sklepie!\n")
         sys.stdout.write("Uzyj strzałek aby wybrać, uzyj enter aby kupić\n")
+        displayStatus("♥ ", player.maxHealth, player.health,
+                      Fore.LIGHTRED_EX, Fore.LIGHTBLACK_EX, "=", "=")
         displayStatus("↑ ", player.maxArrows, player.arrows,
                       Fore.LIGHTBLUE_EX, Fore.LIGHTBLACK_EX, "-", "`")
 

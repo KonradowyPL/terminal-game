@@ -15,10 +15,6 @@ class Projectile(RenderableComponent):
         newX = self.vx + self.x
         newY = self.vy + self.y
 
-        img = self.image
-        self.image = self.empty
-        self.render()
-
         # out of bounds
         if newX >= self.renderer.len*4 or newX < 0 or newY >= self.renderer.height*4 or newY < 0:
             return self.renderer.removeFeature(self)
@@ -33,7 +29,6 @@ class Projectile(RenderableComponent):
                 entity.health -= self.damage
                 return
 
-        self.image = img
         self.x = newX
         self.y = newY
 

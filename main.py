@@ -46,7 +46,7 @@ def main():
             sys.stdout.write("\x1B[H\x1B[2J")
             shopSelector(player)
             sys.stdout.write("\x1B[2J")
-            world.render()
+            world.render(force=True)
         elif char == " " and player.arrows > 0:
             player.arrows -= 1
             arrow = Arrow(player.x, player.y+1, 5, 0, player.damage)
@@ -58,8 +58,8 @@ def main():
             if not entity in world.entities:
                 continue
             entity.frame()
-            entity.render()
 
+        world.render()
         # check player death
         if player.health <= 0:
             end(player, "Zginąłeś")
@@ -91,5 +91,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         pass
     sys.stdout.write("\x1b[?1049l")  # switch to normal screen buffer
-    sys.stdout.write("\x1b[?25l")  # hide the cursor
+    sys.stdout.write("\x1b[?25h")  # show the cursor
     
