@@ -1,4 +1,5 @@
 import os
+import sys
 
 
 def getChar() -> str:
@@ -9,10 +10,10 @@ if os.name == "nt":
     import msvcrt
     getch = msvcrt.getch
 elif os.name == "posix":
+    # dzięki Dawid
     # A poor implementation of msvcrt.getch() for Linux
 
     import tty
-    import sys
     import termios
 
     global_tmpch24b = 0

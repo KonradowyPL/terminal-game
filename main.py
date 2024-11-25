@@ -62,7 +62,7 @@ def main():
 
         # check player death
         if player.health <= 0:
-            end(player)
+            end(player, "Zginąłeś")
 
 
         # redner gui
@@ -88,6 +88,8 @@ if __name__ == "__main__":
         sys.stdout.write("\x1b[?25l")  # hide the cursor
         sys.stdout.write("\x1b[?1049h")  # switch to alternate screen buffer
         main()
-        sys.stdout.write("\x1b[?1049l")  # switch to normal screen buffer
     except KeyboardInterrupt:
         pass
+    sys.stdout.write("\x1b[?1049l")  # switch to normal screen buffer
+    sys.stdout.write("\x1b[?25l")  # hide the cursor
+    

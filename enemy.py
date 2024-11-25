@@ -24,11 +24,12 @@ class Enemy(RenderableComponent):
         # died
         if self.health <= 0:
             self.player.money += self.value
+            self.player.kills += 1
             return self.renderer.removeFeature(self)
 
         # loose
         if newX < 0:
-            end(self.player)
+            end(self.player, "Potwory dostały się do twojego sklepu")
 
         # player collision:
         if abs(self.player.x - newX) < 4:

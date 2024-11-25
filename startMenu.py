@@ -8,12 +8,12 @@ def startMenu():
 
     options = [
         "Gladiator - -2 do ilości strzał, +2 do życia",
-        "Łucznik - -2 do życia, +2 do obrażeń, +4 do maksymalnej ilości strzał"
+        "Łucznik - -2 do życia, +1 do obrażeń, +4 do maksymalnej ilości strzał"
     ]
 
     data = [
         [-2, +2, 0],
-        [+4, -2, 2]
+        [+4, -2, 1]
 
     ]
 
@@ -22,6 +22,6 @@ def startMenu():
     selDat = data[selected]
     arrows = selDat[0] + 10
     health = selDat[1] + 10
-    damage = selDat[2] + 10
+    damage = selDat[2] + 1
 
     return [arrows, health, damage]

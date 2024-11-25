@@ -28,8 +28,8 @@ class Shop(RenderableComponent):
 # 4: cost
 
 offers = [
-    ["Strzały x3", "arrows", "maxArrows", 5, 3],
-    ["Rozmiar kołczaniu", "maxArrows", "infinity", 10, 10],
+    ["Strzały x3", "arrows", "maxArrows", 3, 3],
+    ["Rozmiar kołczanu", "maxArrows", "infinity", 10, 10],
     ["Zbroja", "maxHealth", "infinity", 4, 10],
     ["Mikstura leczenia", "health", "infinity", 5, 4],
     ["Lepsze strzały", "damage", "infinity", 1, 5],
