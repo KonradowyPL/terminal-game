@@ -1,10 +1,6 @@
-import msvcrt
 import sys
 from colorama import Fore, Style
-
-
-def getChar() -> str:
-    return chr(msvcrt.getch()[0])
+from utils import getChar
 
 
 
