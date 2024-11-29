@@ -17,7 +17,6 @@ class Enemy(RenderableComponent):
         newX = self.vx + self.x
         newY = self.y
 
-
         # died
         if self.health <= 0:
             self.player.money += self.value

@@ -8,8 +8,8 @@ import schedculer
 
 weights = {
     Zomie: 1,
-    Spider: 3,
-    Creeper: 5,
+    Spider: 5,
+    Creeper: 17,
 }
 
 
