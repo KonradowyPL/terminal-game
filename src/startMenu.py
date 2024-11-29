@@ -2,7 +2,7 @@ from src.selector import menu
 import sys
 
 
-def startMenu():
+async def startMenu():
     sys.stdout.write("\x1B[J\x1B[H")
     sys.stdout.write("Kim chcesz być:\n")
 
@@ -17,7 +17,7 @@ def startMenu():
 
     ]
 
-    selected = menu(options)
+    selected = await menu(options)
 
     selDat = data[selected]
     arrows = selDat[0] + 10

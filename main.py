@@ -1,5 +1,5 @@
 import sys
-
+import asyncio
 from colorama import Fore, just_fix_windows_console
 
 from src.endgame import end
@@ -16,9 +16,9 @@ from src.world import World
 shopMsg = "Nasiśnij enter aby wejść do sklepu"
 
 
-def main():
+async def main():
     just_fix_windows_console()
-    arrows, health, damage = startMenu()
+    arrows, health, damage = await startMenu()
     # print(Fore.RED + "Heloł łord" + Fore.RESET)
     world = World()
     player = Player(y=3*4, x=1, maxHelath=health, damage=damage, maxArrows=arrows)
@@ -34,7 +34,7 @@ def main():
 # TODE wft is this
     while True:
         schedculer.tick()
-        char = getChar()
+        char = await getChar()
 
         # Exit on Ctrl+C
         if char == "\x03":
@@ -42,11 +42,11 @@ def main():
 
         # Handle arrow key presses
         if char == 'à':  # Special key prefix
-            char = getChar()
+            char = await getChar()
             player.move(char)
         elif char == "\r" and (player.x == shop.x and player.y == shop.y):
             sys.stdout.write("\x1B[H\x1B[2J")
-            shopSelector(player)
+            await shopSelector(player)
             sys.stdout.write("\x1B[2J")
             world.render(force=True)
         elif char == " " and player.arrows > 0:
@@ -89,9 +89,11 @@ if __name__ == "__main__":
     try:
         sys.stdout.write("\x1b[?25l")  # hide the cursor
         sys.stdout.write("\x1b[?1049h")  # switch to alternate screen buffer
-        main()
+        asyncio.run(main())
     except KeyboardInterrupt:
         pass
     sys.stdout.write("\x1b[?1049l")  # switch to normal screen buffer
     sys.stdout.write("\x1b[?25h")  # show the cursor
     
+
+

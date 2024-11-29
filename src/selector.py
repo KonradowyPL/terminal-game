@@ -12,7 +12,7 @@ TEXT_SELECTED = "> " + COLOR_SELECTED
 TEXT_UNSELECTED = "  " + COLOR_UNSELECTED
 
 
-def menu(options, selected = 0):
+async def menu(options, selected = 0):
     sys.stdout.write("\x1B[s")  # save cursor position
     sys.stdout.write("\x1B[?25l")  # hide the cursor
     
@@ -26,7 +26,7 @@ def menu(options, selected = 0):
             sys.stdout.write(COLOR_RESET + "\n")
 
         sys.stdout.flush()
-        char = getChar()
+        char = await getChar()
 
         # Exit on Ctrl+C
         if char == "\x03":
@@ -34,7 +34,7 @@ def menu(options, selected = 0):
 
         # Handle arrow key presses
         if char == 'à':  # Special key prefix
-            char = getChar()
+            char = await getChar()
             if char == "H":  # Up arrow
                 selected -= 1
             elif char == "P":  # Down arrow

@@ -1,5 +1,5 @@
 from src.gui import RenderableComponent
-import src.selector
+import src.selector as selector
 from src.statusbar import displayNumber, displayStatus
 import sys
 from colorama import Style, Fore
@@ -35,7 +35,7 @@ offers = [
 ]
 
 
-def shopSelector(player):
+async def shopSelector(player):
 
     selected = 0
     while True:
@@ -65,7 +65,7 @@ def shopSelector(player):
 
             options.append(text)
 
-        selected = selector.menu(options, selected=selected)
+        selected = await selector.menu(options, selected=selected)
 
         if selected == 0:
             return
