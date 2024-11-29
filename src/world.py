@@ -1,6 +1,6 @@
 from colorama import Fore, Style
 
-from gui import RenderableComponent, Renderer
+from src.gui import RenderableComponent, Renderer
 
 
 class World(Renderer):

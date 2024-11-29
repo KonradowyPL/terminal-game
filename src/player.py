@@ -1,4 +1,4 @@
-from gui import RenderableComponent
+from src.gui import RenderableComponent
 
 
 class Player(RenderableComponent):

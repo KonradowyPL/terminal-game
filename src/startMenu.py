@@ -1,4 +1,4 @@
-from selector import menu
+from src.selector import menu
 import sys
 
 

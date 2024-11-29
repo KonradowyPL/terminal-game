@@ -1,15 +1,17 @@
 import sys
-from colorama import just_fix_windows_console, Fore
-import schedculer
-from spawner import spawner
-from world import World
-from player import Player
-from shop import Shop, shopSelector
-from projectile import Arrow
-from utils import getChar
-from statusbar import displayStatus, displayNumber
-from endgame import end
-from startMenu import startMenu
+
+from colorama import Fore, just_fix_windows_console
+
+from src.endgame import end
+from src.player import Player
+from src.projectile import Arrow
+import src.schedculer as schedculer
+from src.shop import Shop, shopSelector
+from src.spawner import spawner
+from src.startMenu import startMenu
+from src.statusbar import displayNumber, displayStatus
+from src.utils import getChar
+from src.world import World
 
 shopMsg = "Nasiśnij enter aby wejść do sklepu"
 

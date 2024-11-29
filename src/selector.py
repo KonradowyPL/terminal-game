@@ -1,6 +1,6 @@
 import sys
 from colorama import Fore, Style
-from utils import getChar
+from src.utils import getChar
 
 
 

@@ -1,9 +1,8 @@
-from os import rename
-from schedculer import schedcule
-from enemy import Zomie, Spider, Creeper
+from src.schedculer import schedcule
+from src.enemy import Zomie, Spider, Creeper
 import random
 
-import schedculer
+import src.schedculer as schedculer
 
 
 weights = {

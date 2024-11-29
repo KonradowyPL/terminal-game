@@ -1,6 +1,6 @@
-from gui import RenderableComponent
+from src.gui import RenderableComponent
+from src.endgame import end
 from colorama import Fore
-from endgame import end
 
 
 class Enemy(RenderableComponent):

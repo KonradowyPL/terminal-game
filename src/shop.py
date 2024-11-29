@@ -1,9 +1,8 @@
-from copyreg import constructor
-from gui import RenderableComponent
-import selector
+from src.gui import RenderableComponent
+import src.selector
+from src.statusbar import displayNumber, displayStatus
 import sys
 from colorama import Style, Fore
-from statusbar import displayNumber, displayStatus
 
 
 

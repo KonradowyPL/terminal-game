@@ -1,6 +1,5 @@
-from sys import platform
-from gui import RenderableComponent
-from enemy import Enemy
+from src.gui import RenderableComponent
+from src.enemy import Enemy
 
 
 class Projectile(RenderableComponent):

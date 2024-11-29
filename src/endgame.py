@@ -1,4 +1,4 @@
-from statusbar import displayNumber, displayStatus
+from src.statusbar import displayNumber, displayStatus
 from colorama import Fore
 import sys
 
